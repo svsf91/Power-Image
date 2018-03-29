@@ -6,30 +6,24 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { Routing } from './app.routing';
-<<<<<<< HEAD
 import {UserService} from './services/user.service.client';
 import {StatusService} from './services/status.service.client';
 import {FlickrService} from './services/flickr.service.client';
 import {HttpClientModule} from '@angular/common/http';
-=======
 import { SupportComponent } from './components/support/support.component';
 import { HeaderComponent } from './components/header-footer/header/header.component';
 import { FooterComponent } from './components/header-footer/footer/footer.component';
-
->>>>>>> origin/master
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-<<<<<<< HEAD
     LoginComponent,
-    RegisterComponent
-=======
+    RegisterComponent,
     SupportComponent,
     HeaderComponent,
     FooterComponent
->>>>>>> origin/master
+
   ],
   imports: [
     BrowserModule,
