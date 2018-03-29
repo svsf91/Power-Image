@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { SupportComponent } from './components/support/support.component';
 import { HeaderComponent } from './components/header-footer/header/header.component';
 import { FooterComponent } from './components/header-footer/footer/footer.component';
+import {ProfileComponent} from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/header-footer/footer/footer.compon
     MainPageComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
     SupportComponent,
     HeaderComponent,
     FooterComponent

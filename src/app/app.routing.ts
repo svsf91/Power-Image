@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     { path: '', component: MainPageComponent},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    {path: 'support', component: SupportComponent}
+    { path: 'support', component: SupportComponent }
 ];
 
 export const Routing = RouterModule.forRoot(appRoutes);
