@@ -8,7 +8,7 @@ module.exports = function() {
         connectionString = 'mongodb://' + dbuser + ':' + dbpass + '@' + dburl;
     }
     else {
-        connectionString = 'mongodb://localhost:27017/blogApp';
+        connectionString = 'mongodb://localhost:27017/powerImage';
     }
 
     var mongoose = require('mongoose');
