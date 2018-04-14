@@ -15,7 +15,7 @@ import { SupportComponent } from './components/support/support.component';
 import { HeaderComponent } from './components/header-footer/header/header.component';
 import { FooterComponent } from './components/header-footer/footer/footer.component';
 import { UserMainComponent } from './components/main/user-main/user-main.component';
-
+import {ProfileComponent} from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { UserMainComponent } from './components/main/user-main/user-main.compone
     MainPageComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
     SupportComponent,
     HeaderComponent,
     FooterComponent,

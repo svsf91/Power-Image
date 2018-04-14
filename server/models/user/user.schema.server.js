@@ -1,5 +1,4 @@
 module.exports = function(mongoose){
-  var websiteSchema = require("../website/website.schema.server.js")(mongoose);
   var Schema = mongoose.Schema;
 
   var userSchema = new Schema({
@@ -9,10 +8,6 @@ module.exports = function(mongoose){
     lastName : String,
     email : String,
     phone : String,
-    websites : [{
-      type: Schema.Types.ObjectId,
-      ref : 'Website'
-    }],
     dateCreated : {
       type : Date,
       type : Date,

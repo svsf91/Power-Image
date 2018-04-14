@@ -1,8 +1,8 @@
 module.exports = function(mongoose){
   var userSchema = require('./user.schema.server.js')(mongoose);
   var userModel = mongoose.model('User', userSchema);
-  const findOrCreate = require('mongoose-findorcreate');
-  userSchema.plugin(findOrCreate);
+  // const findOrCreate = require('mongoose-findorcreate');
+  // userSchema.plugin(findOrCreate);
 
 
   var api = {
