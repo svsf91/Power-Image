@@ -1,0 +1,27 @@
+<app-header [title]="'Main'"></app-header>
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12 center">
+        <div class="container" id="title">
+          <h2>Upload Image</h2>
+          <p>
+            Upload your image in just one click
+          </p>
+
+          <input type="file" #fileInput placeholder="Upload file..." />
+          <button type="button" (click)="upload()">Upload</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<app-footer></app-footer>

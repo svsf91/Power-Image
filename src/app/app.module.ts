@@ -9,10 +9,12 @@ import { Routing } from './app.routing';
 import {UserService} from './services/user.service.client';
 import {StatusService} from './services/status.service.client';
 import {FlickrService} from './services/flickr.service.client';
+import {ImageService} from './services/image.service.client';
 import {HttpClientModule} from '@angular/common/http';
 import { SupportComponent } from './components/support/support.component';
 import { HeaderComponent } from './components/header-footer/header/header.component';
 import { FooterComponent } from './components/header-footer/footer/footer.component';
+import { UserMainComponent } from './components/main/user-main/user-main.component';
 import {ProfileComponent} from './components/user/profile/profile.component';
 
 @NgModule({
@@ -24,8 +26,8 @@ import {ProfileComponent} from './components/user/profile/profile.component';
     ProfileComponent,
     SupportComponent,
     HeaderComponent,
-    FooterComponent
-
+    FooterComponent,
+    UserMainComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import {ProfileComponent} from './components/user/profile/profile.component';
     FormsModule,
     HttpClientModule,
 ],
-  providers: [UserService, StatusService, FlickrService],
+  providers: [UserService, StatusService, FlickrService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
