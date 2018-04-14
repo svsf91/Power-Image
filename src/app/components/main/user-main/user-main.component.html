@@ -1,0 +1,15 @@
+<app-header [title]="'Main'"></app-header>
+
+<div class="container" id="title">
+  <h2>Upload Image</h2>
+  <p>
+    Upload your image in just one click
+  </p>
+
+  <input type="file" #fileInput placeholder="Upload file..." />
+  <button type="button" (click)="upload()">Upload</button>
+
+</div>
+
+
+<app-footer></app-footer>
