@@ -4,9 +4,7 @@ import {User} from '../models/user.client.model';
 
 // injecting service into module
 @Injectable()
-
 export class UserService {
-
   api = {
     'createUser': this.createUser,
     'findUserById': this.findUserById,

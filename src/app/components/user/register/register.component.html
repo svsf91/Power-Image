@@ -7,7 +7,9 @@
           <div *ngIf="errorFlag" class="alert alert-danger">
             {{errorMsg}}
           </div>
-          <h1>Register</h1>
+          <div class="valign-wrapper">
+            <h5>Register</h5>
+          </div>
           <form (ngSubmit)="register()" #f="ngForm">
             <input placeholder="username"
                    name="username"
@@ -33,12 +35,14 @@
             <span class="help-block" *ngIf="veri.touched && veri.invalid">
             </span>
             <button type="submit"
-                    class="btn btn-primary btn-block"
-                    [disabled]="f.invalid">
-              Register
+                    class="waves-effect waves-light btn"
+                    [disabled]="f.invalid">Register
+              <i class="material-icons right">send</i>
             </button>
-            <button routerLink="/login" class="btn btn-danger btn-block">
-              Cancel
+            <button type="button"
+                    routerLink="/login"
+                    class="waves-effect waves-light btn">Cancel
+              <i class="material-icons right">cancel</i>
             </button>
           </form>
         </div>
