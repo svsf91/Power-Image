@@ -4,14 +4,23 @@ const app = express();
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var router = require("./server/app.js")(app);
+
+app.use(cookieParser());
+
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cookieParser());
-app.use(passport.initialize());
-app.use(passport.session());
+var router = require("./server/app.js")(app);
+
 
 app.set('port', (process.env.PORT || 3000));
 app.use(express.static(__dirname + '/dist'));
