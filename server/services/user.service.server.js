@@ -1,7 +1,9 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var bcrypt = require('bcrypt-nodejs');
+
 
 module.exports = function (app, models) {
   var users = [];
@@ -114,6 +116,78 @@ module.exports = function (app, models) {
         }
       );
   }
+
+  /* Google Login Functions Begin */
+
+  // Authenticate Request:
+  app.get('/auth/google', passport.authenticate('google', {scope: 'profile'}));
+
+  // app.get('/auth/google/callback', passport.authenticate('google', {
+  //   successRedirect: '/user',
+  //   failureRedirect: '/login'
+  // }));
+  app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    function(req, res) {
+      // Successful authentication, redirect home.
+      res.redirect('/user');
+    });
+
+
+  // FacebookStrategy
+  var googleConfig = {
+    clientID: process.env.GOOGLE_CLIENT_ID || '109169742644-0tbpcbabvq3t380bjqtpdrr7gkhf9al7.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'IPk03_hvBPahQvAQrdvBuwgr',
+
+    //Use for local:
+    //callbackURL  : process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
+
+    //Use for heroku:
+    callbackURL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
+  };
+
+  passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+
+  function googleStrategy(token, refreshToken, profile, done) {
+    models
+      .userModel
+      .findUserByGoogleId(profile.id)
+      .then(
+        function (user) {
+          if (user) {
+            return done(null, user);
+          } else {
+            var newGoogleUser = {
+              username: "username",
+              password: "password",
+              google: {
+                id: profile.id,
+                token: token
+              }
+            };
+            return models
+              .userModel
+              .createUser(newGoogleUser);
+          }
+        },
+        function (err) {
+          if (err) {
+            return done(err);
+          }
+        }
+      )
+      .then(
+        function (user) {
+          return done(null, user);
+        },
+        function (err) {
+          if (err) {
+            return done(err);
+          }
+        }
+      );
+  }
+  /* Google Login Functions End */
 
 
   function serializeUser(user, done) {
