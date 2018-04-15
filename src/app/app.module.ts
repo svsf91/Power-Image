@@ -17,6 +17,7 @@ import { FooterComponent } from './components/header-footer/footer/footer.compon
 import { UserMainComponent } from './components/main/user-main/user-main.component';
 import {ProfileComponent} from './components/user/profile/profile.component';
 import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
+import {UploadFileService} from './services/uploadfile.service.client';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { AdminMainComponent } from './components/main/admin-main/admin-main.comp
     FormsModule,
     HttpClientModule,
 ],
-  providers: [UserService, StatusService, FlickrService, ImageService],
+  providers: [UserService, StatusService, FlickrService, ImageService, UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

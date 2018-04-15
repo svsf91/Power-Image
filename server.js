@@ -5,6 +5,14 @@ var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// CORS // Cross-Origin Resource Sharing // allows the browser to ask the server whether it is OK for Js to request data from it
+app.use( function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+  next();
+});
+
 app.use(cookieParser());
 
 app.use(require('express-session')({
@@ -24,6 +32,8 @@ var router = require("./server/app.js")(app);
 
 app.set('port', (process.env.PORT || 3000));
 app.use(express.static(__dirname + '/dist'));
+
+
 
 app.use(function(req, res) {
   // Use res.sendfile, as it streams instead of reading the file into memory.

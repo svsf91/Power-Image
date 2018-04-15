@@ -5,6 +5,8 @@ import {StatusService} from '../../../services/status.service.client';
 import {User} from '../../../models/user.client.model';
 import {Router} from '@angular/router';
 import {ImageService} from '../../../services/image.service.client';
+import { UploadFileService } from '../../../services/uploadfile.service.client';
+
 
 
 @Component({
@@ -18,11 +20,12 @@ export class UserMainComponent implements OnInit {
   user: User = new User('hugh', '', '', 'hugh', 'Deng', 'hugh@gmail.com');
   username: string;
   message: string;
-
+  selectedFiles: FileList;
   constructor(private router: Router,
               private userService: UserService,
               private statusService: StatusService,
-              private imageService: ImageService) { }
+              private imageService: ImageService,
+              private uploadService: UploadFileService) { }
 
   ngOnInit() {
     this.statusService.checkLoggedIn().subscribe(
@@ -35,12 +38,18 @@ export class UserMainComponent implements OnInit {
     );
   }
 
-  upload() { }
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.uploadService.uploadfile(file);
+  }
+
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+  }
 
   logout() {
     this.userService.logout().subscribe(
       res => this.router.navigate(['/login'])
     );
   }
-
 }
