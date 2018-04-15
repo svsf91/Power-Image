@@ -18,7 +18,7 @@ module.exports = function(mongoose){
       id: String,
       token: String
     },
-    google:{
+    google: {
       id: String,
       token: String
     }

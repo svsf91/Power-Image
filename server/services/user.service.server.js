@@ -120,12 +120,19 @@ module.exports = function (app, models) {
   /* Google Login Functions Begin */
 
   // Authenticate Request:
-  app.get('/auth/google', passport.authenticate('google', {scope: 'email'}));
+  app.get('/auth/google', passport.authenticate('google', {scope: 'profile'}));
 
-  app.get('/auth/google/callback', passport.authenticate('google', {
-    successRedirect: '/user',
-    failureRedirect: '/login'
-  }));
+  // app.get('/auth/google/callback', passport.authenticate('google', {
+  //   successRedirect: '/user',
+  //   failureRedirect: '/login'
+  // }));
+  app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    function(req, res) {
+      // Successful authentication, redirect home.
+      res.redirect('/user');
+    });
+
 
   // FacebookStrategy
   var googleConfig = {
@@ -151,9 +158,9 @@ module.exports = function (app, models) {
             return done(null, user);
           } else {
             var newGoogleUser = {
-              username: profile.displayName,
+              username: "username",
               password: "password",
-              facebook: {
+              google: {
                 id: profile.id,
                 token: token
               }

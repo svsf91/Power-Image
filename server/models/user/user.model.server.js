@@ -41,8 +41,8 @@ module.exports = function(mongoose){
       username : user.username,
       password : user.password,
       websites : [],
-      facebook: user.facebook
-
+      facebook: user.facebook,
+      google: user.google
     };
 
     if(user.firstName){
