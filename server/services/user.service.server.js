@@ -136,7 +136,7 @@ module.exports = function (app, models) {
     //callbackURL  : process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
 
     //Use for heroku:
-    callbackURL: process.env.GOOGLE_CALLBACK_URL || 'https://serene-fortress-94809.herokuapp.com/auth/google/callback'
+    callbackURL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
   };
 
   passport.use(new GoogleStrategy(googleConfig, googleStrategy));
