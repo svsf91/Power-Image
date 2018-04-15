@@ -129,8 +129,8 @@ module.exports = function (app, models) {
 
   // FacebookStrategy
   var googleConfig = {
-    clientID: process.env.GOOGLE_CLIENT_ID || '559131524442517',
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET || '596a598cee336efa6908cbac1bb4b75e',
+    clientID: process.env.GOOGLE_CLIENT_ID || '109169742644-0tbpcbabvq3t380bjqtpdrr7gkhf9al7.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'IPk03_hvBPahQvAQrdvBuwgr',
 
     //Use for local:
     //callbackURL  : process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
