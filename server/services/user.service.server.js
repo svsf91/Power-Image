@@ -72,7 +72,7 @@ module.exports = function (app, models) {
     //callbackURL  : process.env.FACEBOOK_CALLBACK_URL || 'http://localhost:3000/auth/facebook/callback'
 
     //Use for heroku:
-    callbackURL: process.env.FACEBOOK_CALLBACK_URL || 'https://serene-fortress-94809.herokuapp.com/auth/facebook/callback'
+    callbackURL: process.env.FACEBOOK_CALLBACK_URL || 'http://localhost:3000/auth/facebook/callback'
   };
 
   passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
