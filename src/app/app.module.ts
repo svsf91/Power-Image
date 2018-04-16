@@ -18,6 +18,7 @@ import { UserMainComponent } from './components/main/user-main/user-main.compone
 import {ProfileComponent} from './components/user/profile/profile.component';
 import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
 import {UploadFileService} from './services/uploadfile.service.client';
+import { EditorComponent } from './components/user/editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {UploadFileService} from './services/uploadfile.service.client';
     HeaderComponent,
     FooterComponent,
     UserMainComponent,
-    AdminMainComponent
+    AdminMainComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
