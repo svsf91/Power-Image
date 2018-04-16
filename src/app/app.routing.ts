@@ -4,6 +4,8 @@ import {LoginComponent} from './components/user/login/login.component';
 import {RegisterComponent} from './components/user/register/register.component';
 import {SupportComponent} from './components/support/support.component';
 import {UserMainComponent} from './components/main/user-main/user-main.component';
+import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
+
 
 const appRoutes: Routes = [
     { path: '', component: MainPageComponent},
@@ -12,6 +14,7 @@ const appRoutes: Routes = [
     {path: 'support', component: SupportComponent},
     {path: 'user/:uid', component: UserMainComponent},
     {path: 'test', component: UserMainComponent},
+  {path: 'admin-test', component: AdminMainComponent}
     // {path: '**', component: MainPageComponent},
 ];
 
