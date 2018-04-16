@@ -1,12 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { Angular2TokenService } from 'angular2-token';
+import {Angular2TokenService} from 'angular2-token';
 import {UserService} from '../../../services/user.service.client';
 import {StatusService} from '../../../services/status.service.client';
 import {User} from '../../../models/user.client.model';
 import {Router} from '@angular/router';
 import {ImageService} from '../../../services/image.service.client';
-import { UploadFileService } from '../../../services/uploadfile.service.client';
-
+import {UploadFileService} from '../../../services/uploadfile.service.client';
 
 
 @Component({
@@ -21,11 +20,13 @@ export class UserMainComponent implements OnInit {
   username: string;
   message: string;
   selectedFiles: FileList;
+
   constructor(private router: Router,
               private userService: UserService,
               private statusService: StatusService,
               private imageService: ImageService,
-              private uploadService: UploadFileService) { }
+              private uploadService: UploadFileService) {
+  }
 
   ngOnInit() {
     this.statusService.checkLoggedIn().subscribe(
@@ -40,7 +41,13 @@ export class UserMainComponent implements OnInit {
 
   upload() {
     const file = this.selectedFiles.item(0);
-    this.uploadService.uploadfile(file);
+    this.uploadService.uploadfile(file, function(err, data) {
+      if(err) {
+        alert('error uploading image');
+      } else {
+        alert('upload success!');
+      }
+    });
   }
 
   selectFile(event) {

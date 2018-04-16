@@ -8,7 +8,7 @@ export class UploadFileService {
   FOLDER = 'images/';
   constructor() { }
 
-  uploadfile(file) {
+  uploadfile(file, callback) {
 
     const bucket = new S3(
       {
@@ -27,11 +27,10 @@ export class UploadFileService {
     bucket.upload(params, function (err, data) {
       if (err) {
         console.log('There was an error uploading your file: ', err);
-        return false;
+      } else {
+        console.log('Successfully uploaded file.', data);
       }
-
-      console.log('Successfully uploaded file.', data);
-      return true;
+      callback(err, data);
     });
   }
 
