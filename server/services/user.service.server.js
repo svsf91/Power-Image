@@ -131,8 +131,6 @@ module.exports = function (app, models) {
       // Successful authentication, redirect home.
       res.redirect('/user');
     });
-
-
   // FacebookStrategy
   var googleConfig = {
     clientID: process.env.GOOGLE_CLIENT_ID,
