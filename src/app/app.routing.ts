@@ -5,18 +5,19 @@ import {RegisterComponent} from './components/user/register/register.component';
 import {SupportComponent} from './components/support/support.component';
 import {UserMainComponent} from './components/main/user-main/user-main.component';
 import {EditorComponent} from './components/user/editor/editor.component';
+import {MenuComponent} from './components/menu/menu.component';
 
 const appRoutes: Routes = [
-    { path: '', component: MainPageComponent},
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    {path: 'support', component: SupportComponent},
-    {path: 'user/:uid', component: UserMainComponent},
+  {path: '', component: MainPageComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'support', component: SupportComponent},
+  {path: 'user/:uid', component: UserMainComponent},
   {path: 'user', component: UserMainComponent},
-
+  {path: 'menu', component: MenuComponent},
   {path: 'test', component: UserMainComponent},
   {path: 'editor', component: EditorComponent},
-    // {path: '**', component: MainPageComponent},
+  // {path: '**', component: MainPageComponent},
 ];
 
 export const Routing = RouterModule.forRoot(appRoutes);

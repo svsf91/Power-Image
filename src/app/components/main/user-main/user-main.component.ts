@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Angular2TokenService} from 'angular2-token';
 import {UserService} from '../../../services/user.service.client';
 import {StatusService} from '../../../services/status.service.client';
 import {User} from '../../../models/user.client.model';

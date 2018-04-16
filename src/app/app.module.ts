@@ -19,6 +19,7 @@ import {ProfileComponent} from './components/user/profile/profile.component';
 import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
 import {UploadFileService} from './services/uploadfile.service.client';
 import { EditorComponent } from './components/user/editor/editor.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditorComponent } from './components/user/editor/editor.component';
     FooterComponent,
     UserMainComponent,
     AdminMainComponent,
-    EditorComponent
+    EditorComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
