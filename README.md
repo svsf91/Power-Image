@@ -1,8 +1,10 @@
+
+
 https://power-image.herokuapp.com/
 
 # TeamForWeb
 
-4.14.2018
+![](https://github.ccs.neu.edu/yifandai/TeamForWeb/blob/master/LOGO.png)
 
 # Team Members:
 
