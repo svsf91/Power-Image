@@ -6,6 +6,7 @@ import {SupportComponent} from './components/support/support.component';
 import {UserMainComponent} from './components/main/user-main/user-main.component';
 import {EditorComponent} from './components/user/editor/editor.component';
 import {MenuComponent} from './components/menu/menu.component';
+import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   {path: 'user', component: UserMainComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'test', component: UserMainComponent},
+  {path: 'admin-test', component: AdminMainComponent}
   {path: 'editor', component: EditorComponent},
   // {path: '**', component: MainPageComponent},
 ];
