@@ -1,49 +1,58 @@
-<app-header [title]="'Main'"></app-header>
-<div class="container">
-  <div class="section">
-    <div class="row">
-      <div class="col s12 center">
-        <div class="container-fluid">
-          <div *ngIf="errorFlag" class="alert alert-danger">
-            {{errorMsg}}
-          </div>
-          <div class="valign-wrapper">
-            <h5>Login</h5>
-          </div>
-          <form (ngSubmit)="login()" #f="ngForm">
-            <input placeholder="username"
-                   name="username"
-                   type="text"
-                   class="form-control"
-                   [(ngModel)]="username" required #name="ngModel"/>
-            <span class="help-block"
-                  *ngIf="name.invalid && name.touched">
+<body>
+<main>
+  <app-header [title]="'Main'"></app-header>
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <div class="container-fluid">
+            <div *ngIf="errorFlag" class="alert alert-danger">
+              {{errorMsg}}
+            </div>
+            <div class="valign-wrapper">
+              <h5>Login</h5>
+            </div>
+            <form (ngSubmit)="login()" #f="ngForm">
+              <input placeholder="username"
+                     name="username"
+                     type="text"
+                     class="form-control"
+                     [(ngModel)]="username" required #name="ngModel"/>
+              <span class="help-block"
+                    *ngIf="name.invalid && name.touched">
       Please enter username!
     </span>
-            <input placeholder="password"
-                   name="password"
-                   type="password"
-                   class="form-control"
-                   [(ngModel)]="password" required #pass="ngModel"/>
-            <span class="help-block"
-                  *ngIf="pass.invalid && pass.touched">
+              <input placeholder="password"
+                     name="password"
+                     type="password"
+                     class="form-control"
+                     [(ngModel)]="password" required #pass="ngModel"/>
+              <span class="help-block"
+                    *ngIf="pass.invalid && pass.touched">
       Please enter password!
     </span>
-            <button class="waves-effect waves-light btn"
-                    [disabled]="f.invalid">Login
-              <i class="material-icons right">send</i>
-            </button>
-            <button href="/auth/facebook" class="waves-effect waves-light btn">Facebook
-              <i class="material-icons right">book</i>
-            </button>
-            <button routerLink="/register"
-                    class="waves-effect waves-light btn">Register
-              <i class="material-icons right">person_add</i>
-            </button>
-          </form>
+              <button type="submit"
+                      class="waves-effect waves-light btn"
+                      [disabled]="f.invalid">Login
+                <i class="material-icons right">send</i>
+              </button>
+              <a href="/auth/facebook" class="waves-effect waves-light btn">Facebook
+                <i class="material-icons right">book</i>
+              </a>
+              <a href="/auth/google" class="waves-effect waves-light btn">Google
+                <i class="material-icons right">book</i>
+              </a>
+              <button type="button"
+                      routerLink="/register"
+                      class="waves-effect waves-light btn">Register
+                <i class="material-icons right">person_add</i>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 <app-footer></app-footer>
+</body>

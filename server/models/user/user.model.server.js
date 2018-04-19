@@ -13,13 +13,18 @@ module.exports = function(mongoose){
     'updateUser' : updateUser,
     'deleteUser' : deleteUser,
     'insertWebsiteToUser' : insertWebsiteToUser,
-    'findUserByFacebookId': findUserByFacebookId
+    'findUserByFacebookId': findUserByFacebookId,
+    'findUserByGoogleId': findUserByGoogleId
   };
 
   return api;
 
   function findUserByFacebookId(facebookId) {
     return userModel.findOne({'facebook.id': facebookId});
+  }
+
+  function findUserByGoogleId(googleId) {
+    return userModel.findOne({'google.id': googleId});
   }
 
   function insertWebsiteToUser(userId, websiteId){
@@ -36,8 +41,8 @@ module.exports = function(mongoose){
       username : user.username,
       password : user.password,
       websites : [],
-      facebook: user.facebook
-
+      facebook: user.facebook,
+      google: user.google
     };
 
     if(user.firstName){

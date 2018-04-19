@@ -17,6 +17,9 @@ import { FooterComponent } from './components/header-footer/footer/footer.compon
 import { UserMainComponent } from './components/main/user-main/user-main.component';
 import {ProfileComponent} from './components/user/profile/profile.component';
 import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
+import {UploadFileService} from './services/uploadfile.service.client';
+import { EditorComponent } from './components/user/editor/editor.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { AdminMainComponent } from './components/main/admin-main/admin-main.comp
     HeaderComponent,
     FooterComponent,
     UserMainComponent,
-    AdminMainComponent
+    AdminMainComponent,
+    EditorComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { AdminMainComponent } from './components/main/admin-main/admin-main.comp
     FormsModule,
     HttpClientModule,
 ],
-  providers: [UserService, StatusService, FlickrService, ImageService],
+  providers: [UserService, StatusService, FlickrService, ImageService, UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
