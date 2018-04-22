@@ -71,9 +71,14 @@ module.exports = function(mongoose){
 
 
   function findUserByCredentials(username, password){
-    return userModel.findOne({
+    userModel.findOne({
       username : username,
       password : password
+    }).then(function(user) {
+      user.dateLastLogin = Date.now();
+      user.loginCount += 1;
+      user.save();
+      return user;
     });
   }
 
@@ -93,4 +98,5 @@ module.exports = function(mongoose){
       _id : userId
     });
   }
+
 };

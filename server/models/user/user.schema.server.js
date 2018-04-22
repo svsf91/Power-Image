@@ -10,9 +10,15 @@ module.exports = function(mongoose){
     phone : String,
     dateCreated : {
       type : Date,
-      type : Date,
+      default: Date.now
+    },
+    dateLastLogin: {
       type : Date,
       default: Date.now
+    },
+    loginCount: {
+      type : Number,
+      default: 0
     },
     facebook: {
       id: String,

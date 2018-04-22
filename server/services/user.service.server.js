@@ -65,10 +65,8 @@ module.exports = function (app, models) {
 
   //FacebookStrategy
   var facebookConfig = {
-    clientID: process.env.FACEBOOK_CLIENT_ID,
-    // '559131524442517'
-    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    // '596a598cee336efa6908cbac1bb4b75e'
+    clientID: process.env.FACEBOOK_CLIENT_ID || '559131524442517',
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET || '596a598cee336efa6908cbac1bb4b75e',
 
     //Use for heroku:
     callbackURL: process.env.FACEBOOK_CALLBACK_URL || 'http://localhost:3000/auth/facebook/callback'
@@ -133,8 +131,7 @@ module.exports = function (app, models) {
     });
   // FacebookStrategy
   var googleConfig = {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    // '109169742644-0tbpcbabvq3t380bjqtpdrr7gkhf9al7.apps.googleusercontent.com'
+    clientID: process.env.GOOGLE_CLIENT_ID || '109169742644-0tbpcbabvq3t380bjqtpdrr7gkhf9al7.apps.googleusercontent.com',
     clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'IPk03_hvBPahQvAQrdvBuwgr',
     //Use for heroku:
     callbackURL: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/auth/google/callback'
