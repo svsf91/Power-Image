@@ -32,21 +32,21 @@ Install MongoDB with Homebrew
 ```
 brew install mongodb
 ```
-### Clone the repo and build on your local machine:
+Clone the repo and build on your local machine:
 ```
 git clone https://github.ccs.neu.edu/yifandai/TeamForWeb.git
 npm install
 ng build
 ```
-### Run mongodb:
+Run mongodb:
 ```
 sudo mongod
 ```
-### Run server:
+Run server:
 ```
 node server.js
 ```
-### Finally, you can open the browser and go to: 
+Finally, you can open the browser and go to: 
 ```
 localhost:3100
 ```
