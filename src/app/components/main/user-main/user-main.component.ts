@@ -41,7 +41,7 @@ export class UserMainComponent implements OnInit {
   upload() {
     const file = this.selectedFiles.item(0);
     this.uploadService.uploadfile(file, function(err, data) {
-      if(err) {
+      if (err) {
         alert('error uploading image');
       } else {
         alert('upload success!');

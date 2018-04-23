@@ -9,7 +9,6 @@ module.exports = function() {
     }
     else {
       connectionString = 'mongodb://localhost:27017/powerImage'
-        // connectionString = 'mongodb://localhost:27017/test';
     }
 
     var mongoose = require('mongoose');
@@ -17,9 +16,11 @@ module.exports = function() {
     mongoose.Promise = require('q').Promise;
 
     var userModel = require("./user/user.model.server.js")(mongoose);
+    var imageMethod = require('./image/image.model.server.js');
 
     var models = {
-        'userModel' : userModel
+      'userModel' : userModel,
+      'imageMethod' : imageMethod
     };
 
     return models;

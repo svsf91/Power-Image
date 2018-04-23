@@ -4,7 +4,6 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var bcrypt = require('bcrypt-nodejs');
 
-
 module.exports = function (app, models) {
   var users = [];
 
@@ -31,6 +30,10 @@ module.exports = function (app, models) {
   passport.use('LocalStrategy', new LocalStrategy(localStrategy));
   passport.serializeUser(serializeUser);
   passport.deserializeUser(deserializeUser);
+
+  //image
+  app.post('/api/uploadImage', uploadImage);
+
 
   function localStrategy(username, password, done) {
     models
@@ -357,5 +360,16 @@ module.exports = function (app, models) {
           res.sendStatus(400).send(error);
         }
       );
+  }
+
+  // upload image
+  function uploadImage(req, res) {
+    const imageProperty = req.body;
+    models
+      .imageMethod
+      .setUploadImageMetaData(imageProperty)
+      .then(function(image) {
+      res.send('');
+    });
   }
 };

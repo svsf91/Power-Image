@@ -30,7 +30,7 @@ export class UploadFileService {
       } else {
         console.log('Successfully uploaded file.', data);
       }
-      callback(err, data);
+      callback(err, file.name);
     });
   }
 
