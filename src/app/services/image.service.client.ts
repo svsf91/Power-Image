@@ -4,13 +4,6 @@ import {User} from '../models/user.client.model';
 
 @Injectable()
 export class ImageService {
-  api = {
-    'checkLoggedIn': this.checkLoggedIn
-  };
-
   constructor(private http: HttpClient) {}
-  checkLoggedIn () {
-    const url = '/api/checkLoggedIn';
-    return this.http.get<User>(url);
-  }
+
 }

@@ -52,7 +52,7 @@ export class UserService {
   }
 
   checkLoggedIn() {
-    const url = 'api/checkLoggedIn';
+    const url = '/api/checkLoggedIn';
     return this.http.get<User>(url);
   }
 
@@ -66,7 +66,7 @@ export class UserService {
   }
 
   register(user) {
-    const url = 'api/register';
+    const url = '/api/register';
     return this.http.post<User>(url, user);
   }
 

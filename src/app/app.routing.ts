@@ -21,11 +21,7 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'admin', component: AdminDashboardComponent},
   {path: 'dashboard', component: UserDashboardComponent},
-  // {path: '**', component: MainPageComponent},
-  // {path: 'user/:uid', component: UserMainComponent},
-  // {path: 'user', component: UserMainComponent},
-  // {path: 'test', component: UserMainComponent},
-  // {path: 'admin', component: AdminMainComponent},
+  {path: '**', component: MainPageComponent},
 ];
 
 export const Routing = RouterModule.forRoot(appRoutes);
