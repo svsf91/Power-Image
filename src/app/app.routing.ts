@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   {path: 'test', component: UserMainComponent},
   {path: 'admin-test', component: AdminMainComponent},
   {path: 'editor', component: EditorComponent},
-  // {path: '**', component: MainPageComponent},
+  {path: '**', component: MainPageComponent},
 ];
 
 export const Routing = RouterModule.forRoot(appRoutes);
