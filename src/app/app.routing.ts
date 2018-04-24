@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   {path: 'user', component: UserMainComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'test', component: UserMainComponent},
-  {path: 'admin-test', component: AdminMainComponent},
+  {path: 'admin', component: AdminMainComponent},
   {path: 'editor', component: EditorComponent},
   // {path: '**', component: MainPageComponent},
 ];

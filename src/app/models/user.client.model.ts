@@ -10,5 +10,6 @@ export class User {
               public email?: string,
               public website?: Website[],
               public dateCreated?: Date,
-              public facebook?: Facebook) {}
+              public facebook?: Facebook,
+              public is_admin?: boolean ) {}
 }
