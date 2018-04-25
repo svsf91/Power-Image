@@ -23,6 +23,7 @@ import {MenuComponent} from './components/menu/menu.component';
 import {UserDashboardComponent} from './components/dashboard/user-dashboard/user-dashboard.component';
 import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/admin-dashboard.component';
 import {UploaderComponent} from './components/user/uploader/uploader.component';
+import {UserDetailComponent} from './components/main/admin-main/user-detail/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {UploaderComponent} from './components/user/uploader/uploader.component';
     MenuComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    UploaderComponent
+    UploaderComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
