@@ -11,38 +11,59 @@ import {ImageService} from '../../../services/image.service.client';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  userId: string;
+  userId = 'tests';
   user: User;
   username: string;
-  images: any = [];
+  images = undefined;
+
+
+  M = require('../../../../assets/vendors/js/materialize.js');
+  elem: any;
+  instance: any;
+  done = false;
+
   constructor(private router: Router,
               private userService: UserService,
               private statusService: StatusService,
-              private imageService: ImageService) { }
+              private imageService: ImageService) {
+  }
 
   ngOnInit() {
+    this.userId = 'tests';
     this.statusService.checkLoggedIn().subscribe(
       response => {
         this.user = response;
+        if (this.user && this.user._id) {
+          this.userId = this.user._id;
+        }
       },
       err => {
         this.router.navigate(['/login']);
       }
     );
+    this.download();
+
   }
 
   download() {
     const test = [];
-    this.imageService.download(function(data) {
-      console.log(typeof data.Contents);
-      data.Contents.forEach(function(obj) {
-        if (obj.Size !== 0) {
+    const this_userId = this.userId;
+    const this_initCarousel = this.initCarousel;
+    this.imageService.download(function (data) {
+      data.Contents.forEach(function (obj) {
+        if (obj.Size !== 0 && (obj.Key.split('/', 1)[0] === this_userId)) {
           test.push(obj);
         }
       });
-      console.log(test);
-    }, this.user._id);
+      // call init after images downloaded
+    });
     this.images = test;
+    setTimeout(this.initCarousel, 3000);
   }
 
+  initCarousel() {
+    console.log(this.images);
+    this.elem = document.querySelector('.carousel');
+    this.instance = this.M.Carousel.init(this.elem);
+  }
 }
