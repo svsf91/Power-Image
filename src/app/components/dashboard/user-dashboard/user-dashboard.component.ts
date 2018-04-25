@@ -15,6 +15,11 @@ export class UserDashboardComponent implements OnInit {
   username: string;
   message: string;
 
+  M = require('../../../../assets/vendors/js/materialize.js');
+
+  elem: any;
+  instance: any;
+
   constructor(private userService: UserService,
               private activatedRoute: ActivatedRoute,
               private statusService: StatusService,
@@ -29,6 +34,16 @@ export class UserDashboardComponent implements OnInit {
     //     this.router.navigate(['/login']);
     //   }
     // );
+    this.statusService.checkLoggedIn().subscribe(
+      response => {
+        this.user = response;
+      },
+      err => {
+        this.router.navigate(['/login']);
+      }
+    );
+    this.elem = document.querySelector('.sidenav');
+    this.instance = this.M.Sidenav.init(this.elem);
   }
 
 }

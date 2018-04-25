@@ -1,24 +1,41 @@
 <nav>
   <div class="nav-wrapper">
     <nav class="white" role="navigation">
-      <div class="nav-wrappe container">
+      <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">
-          <img src="../../../../assets/vendors/images/LOGO.png" style="position:relative; height: 63px;"/>
+          <img src="../../../../assets/vendors/images/LOGO.png" style="position:relative; height: 50px;"/>
         </a>
+        <!--<ul class="right">-->
+        <!--<li>-->
+        <!--<a routerLink="/login">Login</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <!-- Dropdown Trigger -->
         <ul class="right">
           <li>
-            <a routerLink="/login">Login</a>
+            <a class='dropdown-trigger btn ' href='#' data-target='dropdown1'>Login</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a routerLink="/login">Login</a></li>
+              <li><a routerLink="/login">Logout</a></li>
+              <li><a routerLink="/register">Register</a></li>
+              <li class="divider" tabindex="-1"></li>
+              <li><a routerLink="/dashboard">Dashboard</a></li>
+              <!--<li><a href="#!"><i class="material-icons">view_module</i>four</a></li>-->
+              <!--<li><a href="#!"><i class="material-icons">cloud</i>five</a></li>-->
+            </ul>
           </li>
-        </ul>
 
-        <ul id="nav-mobile" class="sidenav">
-          <li>
-            <a routerLink="/login">Login</a>
-          </li>
+          <!--<ul id="nav-mobile" class="sidenav">-->
+          <!--<li>-->
+          <!--<a routerLink="/login">Login</a>-->
+          <!--</li>-->
+          <!--</ul>-->
+          <!--<a href="#" data-target="nav-mobile" class="sidenav-trigger">-->
+          <!--<i class="material-icons">menu</i>-->
+          <!--</a>-->
         </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
       </div>
     </nav>
   </div>
