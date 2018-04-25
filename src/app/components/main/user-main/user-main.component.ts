@@ -28,14 +28,14 @@ export class UserMainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.statusService.checkLoggedIn().subscribe(
-      response => {
-        this.user = response;
-      },
-      err => {
-        this.router.navigate(['/login']);
-      }
-    );
+    // this.statusService.checkLoggedIn().subscribe(
+    //   response => {
+    //     this.user = response;
+    //   },
+    //   err => {
+    //     this.router.navigate(['/login']);
+    //   }
+    // );
   }
 
   upload() {

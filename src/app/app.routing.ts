@@ -7,18 +7,20 @@ import {UserMainComponent} from './components/main/user-main/user-main.component
 import {EditorComponent} from './components/user/editor/editor.component';
 import {MenuComponent} from './components/menu/menu.component';
 import { AdminMainComponent } from './components/main/admin-main/admin-main.component';
+import {ProfileComponent} from './components/user/profile/profile.component';
+import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/admin-dashboard.component';
+import {UserDashboardComponent} from './components/dashboard/user-dashboard/user-dashboard.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'support', component: SupportComponent},
-  {path: 'user/:uid', component: UserMainComponent},
-  {path: 'user', component: UserMainComponent},
   {path: 'menu', component: MenuComponent},
-  {path: 'test', component: UserMainComponent},
-  {path: 'admin-test', component: AdminMainComponent},
   {path: 'editor', component: EditorComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'admin', component: AdminDashboardComponent},
+  {path: 'dashboard', component: UserDashboardComponent},
   {path: '**', component: MainPageComponent},
 ];
 
