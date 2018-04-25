@@ -47,5 +47,5 @@ node server.js
 ```
 Finally, you can open the browser and go to: 
 ```
-localhost:3100
+localhost:3000
 ```
