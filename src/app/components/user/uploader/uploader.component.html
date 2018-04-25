@@ -17,6 +17,9 @@
               <input type="file" (change)="selectFile($event)">
             </label>
 
+            <!--<input type="file" #fileInput placeholder="Upload file..." />-->
+            <!--<button type="button" (click)="upload()">Upload</button>-->
+
             <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
           </div>
         </div>
