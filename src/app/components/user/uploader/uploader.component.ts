@@ -34,7 +34,11 @@ export class UploaderComponent implements OnInit {
 
   upload() {
     const file = this.selectedFiles.item(0);
-    this.imageService.uploadfile(file, this.user._id);
+    this.imageService.uploadfile(file, this.user._id, function(data, err) {
+      if (data) {
+        alert('Upload Successful');
+      }
+    });
   }
 
 
