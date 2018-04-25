@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var bodyParser = require('body-parser');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
