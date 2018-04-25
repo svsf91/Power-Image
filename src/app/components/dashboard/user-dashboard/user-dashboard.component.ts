@@ -45,5 +45,10 @@ export class UserDashboardComponent implements OnInit {
     this.elem = document.querySelector('.sidenav');
     this.instance = this.M.Sidenav.init(this.elem);
   }
+  logout() {
+    return this.userService.logout().subscribe(response => {
+      this.router.navigate(['']);
+    });
+  }
 
 }

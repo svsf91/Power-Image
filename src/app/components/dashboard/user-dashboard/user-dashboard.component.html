@@ -15,13 +15,17 @@
           <a><span class="black-text email">{{user.email}}</span></a>
         </div>
       </li>
-      <li><a><i class="material-icons">cloud</i>First Link With Icon</a></li>
-      <li><a>Second Link</a></li>
+      <li><a routerLink="/editor"><i class="material-icons">cloud</i>Image Editor</a></li>
+      <li><a routerLink="/upload"><i class="material-icons">cloud</i>Image Uploader</a></li>
+      <li><a routerLink="/gallery"><i class="material-icons">cloud</i>My Gallery</a></li>
       <li>
         <div class="divider"></div>
       </li>
-      <li><a class="subheader">Subheader</a></li>
-      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      <li><a class="subheader">Settings</a></li>
+      <li><a class="waves-effect" routerLink="/about">About</a></li>
+      <li><a class="waves-effect" routerLink="/support">Support</a></li>
+      <li><a class="waves-effect" routerLink="/tutorial">Tutorial</a></li>
+      <li><a class="waves-effect" (click)="logout()">Logout</a></li>
     </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </div>
@@ -74,10 +78,10 @@
       <div class="card blue-grey darken-1">
         <div class="card-image">
           <img src="../../../assets/vendors/images/image-card1.jpg">
-          <span class="card-title">What's more?</span>
+          <span class="card-title">Gallery</span>
         </div>
         <div class="card-action">
-          <a>Edit my own image</a>
+          <a routerLink="/gallery">Show my upload history</a>
         </div>
       </div>
     </div>
