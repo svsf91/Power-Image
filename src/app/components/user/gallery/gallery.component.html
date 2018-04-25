@@ -25,8 +25,8 @@
 
       <div class="carousel">
           <div *ngFor="let image of images">
-            <a class="carousel-item" href="#">
-              <img src="{{'https://s3-us-east-2.amazonaws.com/powerimage/' + image.Key}}">
+            <a class="carousel-item">
+              <img class="materialboxed" width="200" src="{{'https://s3-us-east-2.amazonaws.com/powerimage/' + image.Key}}">
             </a>
           </div>
       </div>

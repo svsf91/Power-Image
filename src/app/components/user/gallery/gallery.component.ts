@@ -18,8 +18,10 @@ export class GalleryComponent implements OnInit {
 
 
   M = require('../../../../assets/vendors/js/materialize.js');
-  elem: any;
-  instance: any;
+  elem1: any;
+  instance1: any;
+  elem2: any;
+  instance2: any;
   done = false;
 
   constructor(private router: Router,
@@ -63,7 +65,9 @@ export class GalleryComponent implements OnInit {
 
   initCarousel() {
     console.log(this.images);
-    this.elem = document.querySelector('.carousel');
-    this.instance = this.M.Carousel.init(this.elem);
+    this.elem1 = document.querySelector('.carousel');
+    this.instance1 = this.M.Carousel.init(this.elem1);
+    this.elem2 = document.querySelector('.materialboxed');
+    this.instance2 = this.M.Materialbox.init(this.elem2);
   }
 }
