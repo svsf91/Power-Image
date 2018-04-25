@@ -209,7 +209,6 @@ function login(req, res) {
 }
 
 function checkLoggedIn(req, res) {
-  console.log("get");
   res.send(req.isAuthenticated() ? req.user : undefined);
 }
 
@@ -297,8 +296,20 @@ function findUserAllUser(req, res) {
         function (error) {
           res.sendStatus(400).send(error);
         });
+  } else {
+    userMethod
+      .findAllUser()
+      .then(function(users) {
+        if(users) {
+          res.json(users);
+        } else {
+          res.send(null);
+        }
+      },
+        function (error) {
+        res.sendstatus(400).send(error);
+        });
   }
-
 }
 
 function findUserById(req, res) {
