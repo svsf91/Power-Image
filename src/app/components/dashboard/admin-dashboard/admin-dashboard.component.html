@@ -81,20 +81,17 @@
         </tr>
         </thead>
 
-        <tbody>
-        <tr>
-          <div *ngIf="userlist" class="container-fluid myBody">
-            <div *ngFor="let user of userlist">
-              <td><a href = '#'>{{user.username}}}</a></td>
+        <tbody *ngIf="userlist">
+            <tr *ngFor="let user of userlist">
+              <td><a href = '#'>{{user.username}}</a></td>
               <td>{{user.dateLastLogin}}}</td>
               <td>{{user.upload}}</td>
-              <div class="progress">
+              <td><div class="progress">
                 <div class="determinate" style="width: 70%"></div>
-              </div>
-            </div>
-          </div>
-        </tr>
+              </div></td>
+            </tr>
         </tbody>
+
       </table>
     </div>
   </div>
