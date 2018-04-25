@@ -11,7 +11,7 @@ import {ImageService} from '../../../services/image.service.client';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  userId: string;
+  userId = 'tests';
   user: User;
   username: string;
   images: any = [];
@@ -21,9 +21,13 @@ export class GalleryComponent implements OnInit {
               private imageService: ImageService) { }
 
   ngOnInit() {
+    this.userId = 'tests';
     this.statusService.checkLoggedIn().subscribe(
       response => {
         this.user = response;
+        if (this.user && this.user._id) {
+          this.userId = this.user._id;
+        }
       },
       err => {
         this.router.navigate(['/login']);
@@ -33,15 +37,14 @@ export class GalleryComponent implements OnInit {
 
   download() {
     const test = [];
+    const this_userId = this.userId;
     this.imageService.download(function(data) {
-      console.log(typeof data.Contents);
       data.Contents.forEach(function(obj) {
-        if (obj.Size !== 0) {
+        if (obj.Size !== 0 && (obj.Key.split('/', 1)[0] === this_userId)) {
           test.push(obj);
         }
       });
-      console.log(test);
-    }, this.user._id);
+    });
     this.images = test;
   }
 
