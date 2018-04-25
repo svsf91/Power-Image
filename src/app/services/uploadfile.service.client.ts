@@ -33,5 +33,4 @@ export class UploadFileService {
       callback(err, file.name);
     });
   }
-
 }

@@ -12,7 +12,8 @@ var api = {
   'deleteUser': deleteUser,
   'insertWebsiteToUser': insertWebsiteToUser,
   'findUserByFacebookId': findUserByFacebookId,
-  'findUserByGoogleId': findUserByGoogleId
+  'findUserByGoogleId': findUserByGoogleId,
+  'findAllUser': findAllUser
 };
 
 function findUserByFacebookId(facebookId) {
@@ -55,6 +56,10 @@ function createUser(user) {
   }
 
   return userModel.create(newUser);
+}
+
+function findAllUser() {
+  return userModel.find({});
 }
 
 function findUserById(userId) {

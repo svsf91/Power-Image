@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var bodyParser = require('body-parser');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -296,8 +295,20 @@ function findUserAllUser(req, res) {
         function (error) {
           res.sendStatus(400).send(error);
         });
+  } else {
+    userMethod
+      .findAllUser()
+      .then(function(users) {
+        if(users) {
+          res.json(users);
+        } else {
+          res.send(null);
+        }
+      },
+        function (error) {
+        res.sendstatus(400).send(error);
+        });
   }
-
 }
 
 function findUserById(req, res) {

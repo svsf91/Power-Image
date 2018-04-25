@@ -8,7 +8,10 @@ export class User {
               public firstName?: string,
               public lastName?: string,
               public email?: string,
-              public website?: Website[],
+              public phone?: string,
               public dateCreated?: Date,
-              public facebook?: Facebook) {}
+              public dateLastLogin?: string,
+              public loginCount?: Number,
+              public facebook?: Facebook,
+              public is_admin?: boolean ) {}
 }
