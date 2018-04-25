@@ -15,26 +15,26 @@ passport.deserializeUser(deserializeUser);
 
 
 // GET Calls.
-router.get('/user', findUserAllUser);
+router.get('/api/user', findUserAllUser);
 
-router.get('/user/:uid', findUserById);
+router.get('/api/user/:uid', findUserById);
 
 // POST Calls.
-router.post('/user', createUsers);
+router.post('/api/user', createUsers);
 
 // PUT Calls.
-router.put('/user/:uid', updateUser);
+router.put('/api/user/:uid', updateUser);
 
 // DELETE Calls.
-router.delete('/user/:uid', deleteUser);
+router.delete('/api/user/:uid', deleteUser);
 
 
 
 //Local
-router.post('/login', passport.authenticate('LocalStrategy'), login);
-router.get('/checkLoggedIn', checkLoggedIn);
-router.post('/register', register);
-router.get('/logout', logout);
+router.post('/api/login', passport.authenticate('LocalStrategy'), login);
+router.get('/api/checkLoggedIn', checkLoggedIn);
+router.post('/api/register', register);
+router.get('/api/logout', logout);
 
 //Facebook
 router.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));

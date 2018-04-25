@@ -36,7 +36,7 @@ app.use(passport.session());
 require('./server/models/models.server.js');
 
 // router configuration
-app.use('/api', require('./server/services/user.service.server.js'));
+app.use('/', require('./server/services/user.service.server.js'));
 app.use('/api/image', require('./server/services/image.service.server.js'));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(function(req, res) {
