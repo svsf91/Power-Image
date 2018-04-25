@@ -15,8 +15,9 @@
 
   <div class="card white darken-3">
     <div class="card-content black-text">
-      <p>Admin: Yifan Dai</p>
-      <p>Last login: 2018/04/17 22:23:45</p>
+      <p>Admin: {{user.username}}</p>
+      <p>Last login: {{user.dateLastLogin}}</p>
+      <p>Total login count: {{user.loginCount}}</p>
     </div>
   </div>
 
@@ -26,9 +27,9 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">User activity</span>
-          <p>Total active user: 1000</p>
-          <p>Total operation: 500</p>
-          <p>Total visiting: 400</p>
+          <p>Total active user: {{usercount}}</p>
+          <p>Total operation: {{operationcount}}</p>
+          <p>Total visiting today: {{visit24}}</p>
         </div>
         <div class="card-action">
           <a href="#">More Statistics</a>
@@ -39,9 +40,8 @@
       <div class="card green darken-1">
         <div class="card-content white-text">
           <span class="card-title">Upload & download</span>
-          <p>Total upload: 10</p>
-          <p>Total download: 12</p>
-          <p>Total population</p>
+          <p>Total upload: {{uploadcount}}</p>
+          <p>Total download: {{downloadcount}}</p>
         </div>
         <div class="card-action">
           <a href="#">More Statistics</a>
@@ -63,6 +63,12 @@
     </div>
   </div>
 
+  <div *ngIf="userlist" class="container-fluid myBody">
+    <div *ngFor="let user of userlist">
+    </div>
+  </div>
+
+
   <div class="card white darken-1">
     <div class="card-content black-text">
       <span class="card-title">User information</span>
@@ -78,35 +84,15 @@
 
         <tbody>
         <tr>
-          <td><a href = '#'>Yifan</a></td>
-          <td>2018/04/14</td>
-          <td>2018/04/14</td>
-          <div class="progress">
-            <div class="determinate" style="width: 70%"></div>
-          </div>
-        </tr>
-        <tr>
-          <td><a href = '#'>Da</a></td>
-          <td>2018/04/14</td>
-          <td>2018/04/14</td>
-          <div class="progress">
-            <div class="determinate" style="width: 30%"></div>
-          </div>
-        </tr>
-        <tr>
-          <td><a href = '#'>Swimming</a></td>
-          <td>2018/04/14</td>
-          <td>2018/04/14</td>
-          <div class="progress">
-            <div class="determinate" style="width: 90%"></div>
-          </div>
-        </tr>
-        <tr>
-          <td><a href = '#'>Hugh</a></td>
-          <td>2018/04/14</td>
-          <td>2018/04/14</td>
-          <div class="progress">
-            <div class="determinate" style="width: 50%"></div>
+          <div *ngIf="userlist" class="container-fluid myBody">
+            <div *ngFor="let user of userlist">
+              <td><a href = '#'>{{user.username}}}</a></td>
+              <td>{{user.dateLastLogin}}}</td>
+              <td>{{user.upload}}</td>
+              <div class="progress">
+                <div class="determinate" style="width: 70%"></div>
+              </div>
+            </div>
           </div>
         </tr>
         </tbody>
