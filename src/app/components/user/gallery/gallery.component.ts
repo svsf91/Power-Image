@@ -41,9 +41,8 @@ export class GalleryComponent implements OnInit {
         }
       });
       console.log(test);
-    });
+    }, this.user._id);
     this.images = test;
-    //this.images = test.splice(1, test.length); //delete the first one
   }
 
 }

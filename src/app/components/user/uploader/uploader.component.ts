@@ -12,7 +12,6 @@ import {ImageService} from '../../../services/image.service.client';
 })
 export class UploaderComponent implements OnInit {
   @ViewChild('fileInput') fileInput;
-  userId: string;
   user: User;
   username: string;
   message: string;
@@ -35,7 +34,7 @@ export class UploaderComponent implements OnInit {
 
   upload() {
     const file = this.selectedFiles.item(0);
-    this.imageService.uploadfile(file);
+    this.imageService.uploadfile(file, this.user._id);
   }
 
 
