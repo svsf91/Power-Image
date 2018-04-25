@@ -18,17 +18,11 @@ import {UserMainComponent} from './components/main/user-main/user-main.component
 import {ProfileComponent} from './components/user/profile/profile.component';
 import {AdminMainComponent} from './components/main/admin-main/admin-main.component';
 import {UploadFileService} from './services/uploadfile.service.client';
-<<<<<<< HEAD
 import {EditorComponent} from './components/user/editor/editor.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {UserDashboardComponent} from './components/dashboard/user-dashboard/user-dashboard.component';
 import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/admin-dashboard.component';
 import {UploaderComponent} from './components/user/uploader/uploader.component';
-=======
-import { EditorComponent } from './components/user/editor/editor.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { UserDetailComponent } from './components/main/admin-main/user-detail/user-detail/user-detail.component';
->>>>>>> origin/Fan
 
 @NgModule({
   declarations: [
@@ -44,13 +38,9 @@ import { UserDetailComponent } from './components/main/admin-main/user-detail/us
     AdminMainComponent,
     EditorComponent,
     MenuComponent,
-<<<<<<< HEAD
     UserDashboardComponent,
     AdminDashboardComponent,
     UploaderComponent
-=======
-    UserDetailComponent
->>>>>>> origin/Fan
   ],
   imports: [
     BrowserModule,
