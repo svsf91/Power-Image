@@ -22,6 +22,7 @@ import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/ad
 import {UploaderComponent} from './components/user/uploader/uploader.component';
 import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-detail/user-detail/user-detail.component';
 import { GalleryComponent } from './components/user/gallery/gallery.component';
+import {DisplayComponent} from "./components/user/display/display.component";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { GalleryComponent } from './components/user/gallery/gallery.component';
     UploaderComponent,
     UserDetailComponent,
     GalleryComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,
