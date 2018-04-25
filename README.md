@@ -1,4 +1,4 @@
-![](https://github.ccs.neu.edu/yifandai/TeamForWeb/blob/master/LOGO.png)
+![](https://github.ccs.neu.edu/yifandai/TeamForWeb/blob/master/images/LOGO.png)
 
 https://power-image.herokuapp.com/
 
