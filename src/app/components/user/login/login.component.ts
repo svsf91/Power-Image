@@ -29,9 +29,11 @@ export class LoginComponent implements OnInit {
       .subscribe(
         response => {
           this.user = response;
-
-          if (this.user.is_admin) this.router.navigate(['/admin']);
-          else this.router.navigate(['/user', this.user._id]);
+          if (this.user.is_admin) {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/user', this.user._id]);
+          }
         },
         err => {
           this.errorFlag = true;
