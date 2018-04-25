@@ -10,8 +10,16 @@ export class User {
               public email?: string,
               public phone?: string,
               public dateCreated?: Date,
+<<<<<<< HEAD
               public dateLastLogin?: string,
               public loginCount?: Number,
               public facebook?: Facebook,
               public is_admin?: boolean ) {}
+=======
+              public facebook?: Facebook,
+              public dateLastLogin?: string,
+              public loginCount?: number,
+              public upload?: number,
+              public download?: number) {}
+>>>>>>> origin/Fan
 }
