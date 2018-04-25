@@ -7,8 +7,10 @@ export class ImageService {
   FOLDER = 'tests/';
   constructor() {
   }
-  uploadfile(file) {
-
+  uploadfile(file, userId) {
+    if (userId) {
+      this.FOLDER = userId + '/';
+    }
     const bucket = new S3(
       {
         accessKeyId: 'AKIAJQ2VALX7UTKKR27Q',
@@ -36,8 +38,10 @@ export class ImageService {
 
 // Add an image to the end of the image list
 
-  download(callback) {
-    const imagePath = 'https://s3-us-east-2.amazonaws.com/powerimage/tests/';
+  download(callback, userId) {
+    if (userId) {
+      this.FOLDER = userId + '/';
+    }
 
     const bucket = new S3(
       {
