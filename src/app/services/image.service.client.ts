@@ -38,11 +38,7 @@ export class ImageService {
 
 // Add an image to the end of the image list
 
-  download(callback, userId) {
-    if (userId) {
-      this.FOLDER = userId + '/';
-    }
-
+  download(callback) {
     const bucket = new S3(
       {
         accessKeyId: 'AKIAJQ2VALX7UTKKR27Q',
@@ -53,13 +49,13 @@ export class ImageService {
 
     const params = {
       Bucket: 'powerimage',
-      MaxKeys: 10
+      //MaxKeys: 10
     };
     bucket.listObjects(params, function (err, data) {
       if (err) {
         throw err;
       }
-      console.log(data);
+      //console.log(data);
       callback(data);
     });
   }
