@@ -9,6 +9,8 @@ import {ProfileComponent} from './components/user/profile/profile.component';
 import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/admin-dashboard.component';
 import {UserDashboardComponent} from './components/dashboard/user-dashboard/user-dashboard.component';
 import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-detail/user-detail/user-detail.component';
+import {UploaderComponent} from './components/user/uploader/uploader.component';
+import {GalleryComponent} from './components/user/gallery/gallery.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -23,6 +25,8 @@ const appRoutes: Routes = [
   {path: 'user/:uid', component: UserDashboardComponent},
   {path: 'user', component: UserDashboardComponent},
   {path: 'user-detail', component: UserDetailComponent},
+  {path: 'upload', component: UploaderComponent},
+  {path: 'gallery', component: GalleryComponent},
   {path: '**', component: MainPageComponent},
 ];
 
