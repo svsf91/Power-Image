@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     let user;
-    if (verify !== password) {
+    if (this.verify !== this.password) {
       this.errorFlag = true;
       this.errorMsg = 'Passwords do not match!';
       return;
