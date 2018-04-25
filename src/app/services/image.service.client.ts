@@ -7,7 +7,7 @@ export class ImageService {
   FOLDER = 'tests/';
   constructor() {
   }
-  uploadfile(file, userId) {
+  uploadfile(file, userId, callback) {
     if (userId) {
       this.FOLDER = userId + '/';
     }
@@ -28,11 +28,10 @@ export class ImageService {
     bucket.upload(params, function (err, data) {
       if (err) {
         console.log('There was an error uploading your file: ', err);
-        return false;
+      } else {
+        console.log('Successfully uploaded file.', data);
       }
-
-      console.log('Successfully uploaded file.', data);
-      return true;
+      callback(data, err);
     });
   }
 

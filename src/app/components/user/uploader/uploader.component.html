@@ -1,7 +1,6 @@
 <body>
 <main>
   <app-header [title]="'Uploader'"></app-header>
-
   <div class="container">
     <div class="section">
 
@@ -16,7 +15,7 @@
             <label class="btn btn-default">
               <input type="file" (change)="selectFile($event)">
             </label>
-            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+            <button class="btn btn-success modal-trigger" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
           </div>
         </div>
       </div>
