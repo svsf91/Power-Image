@@ -1,6 +1,6 @@
 <body>
 <main>
-  <app-header [title]="'User Main'"></app-header>
+  <app-header [title]="'Uploader'"></app-header>
 
   <div class="container">
     <div class="section">
@@ -13,24 +13,10 @@
               Upload your image in just one click
             </p>
 
-            <!--<input type="file" #fileInput placeholder="Upload file..." />-->
-            <!--<button type="button" (click)="upload()">Upload</button>-->
-
-<<<<<<< HEAD
-            <!--<<label class="btn btn-default">
+            <label class="btn btn-default">
               <input type="file" (change)="selectFile($event)">
             </label>
-
-            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>-->
-=======
-            <!--<label class="btn btn-default">-->
-              <!--<input type="file" (change)="selectFile($event)">-->
-            <!--</label>-->
-
-            <!--<button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>-->
->>>>>>> 987cb406205ee0bf41d59140a8a025467ae7800b
-
-
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
           </div>
         </div>
       </div>

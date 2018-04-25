@@ -15,13 +15,14 @@ import {SupportComponent} from './components/support/support.component';
 import {HeaderComponent} from './components/header-footer/header/header.component';
 import {FooterComponent} from './components/header-footer/footer/footer.component';
 import {ProfileComponent} from './components/user/profile/profile.component';
-import {UploadFileService} from './services/uploadfile.service.client';
 import {EditorComponent} from './components/user/editor/editor.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {UserDashboardComponent} from './components/dashboard/user-dashboard/user-dashboard.component';
 import {AdminDashboardComponent} from './components/dashboard/admin-dashboard/admin-dashboard.component';
 import {UploaderComponent} from './components/user/uploader/uploader.component';
 import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-detail/user-detail/user-detail.component';
+import { GalleryComponent } from './components/user/gallery/gallery.component';
+import {DisplayComponent} from "./components/user/display/display.component";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,8 @@ import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-d
     AdminDashboardComponent,
     UploaderComponent,
     UserDetailComponent,
+    GalleryComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-d
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserService, StatusService, FlickrService, ImageService, UploadFileService],
+  providers: [UserService, StatusService, FlickrService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
