@@ -38,13 +38,12 @@ export class GalleryComponent implements OnInit {
         if (this.user && this.user._id) {
           this.userId = this.user._id;
         }
+        this.download();
       },
       err => {
         this.router.navigate(['/login']);
       }
     );
-    this.download();
-
   }
 
   download() {
