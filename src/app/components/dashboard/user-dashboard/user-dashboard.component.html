@@ -83,30 +83,12 @@
     </div>
   </div>
 
-  <div class="card white darken-1">
+  <div class="card white darken-3">
     <div class="card-content black-text">
-      <span class="card-title">User information</span>
-      <table>
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Latest Login In</th>
-          <th>Total Upload</th>
-          <th>Space Usage</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-          <td><a href='#'>Yifan</a></td>
-          <td>2018/04/14</td>
-          <td>2018/04/14</td>
-          <div class="progress">
-            <div class="determinate" style="width: 70%"></div>
-          </div>
-        </tr>
-        </tbody>
-      </table>
+      <p>User: {{user.username}}</p>
+      <p>UserType: {{this.user.is_admin? "Admin" : "Regular User"}}</p>
+      <p>Last login: {{user.dateLastLogin}}</p>
+      <p>Total login count: {{user.loginCount}}</p>
     </div>
   </div>
 

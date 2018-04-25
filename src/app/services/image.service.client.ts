@@ -49,13 +49,13 @@ export class ImageService {
 
     const params = {
       Bucket: 'powerimage',
-      //MaxKeys: 10
+      // MaxKeys: 10
     };
     bucket.listObjects(params, function (err, data) {
       if (err) {
         throw err;
       }
-      //console.log(data);
+      // console.log(data);
       callback(data);
     });
   }

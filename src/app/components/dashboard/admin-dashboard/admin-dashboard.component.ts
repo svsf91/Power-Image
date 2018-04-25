@@ -15,7 +15,6 @@ export class AdminDashboardComponent implements OnInit {
   userlist: User[];
   usercount = 0;
   operationcount = 0;
-  visit24 = 0;
   uploadcount = 0;
   downloadcount = 0;
 
@@ -41,5 +40,7 @@ export class AdminDashboardComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     );
+    this.usercount = this.userlist.length;
+    this.operationcount = this.uploadcount + this.downloadcount;
   }
 }
