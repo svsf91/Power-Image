@@ -6,17 +6,15 @@ import {Router} from '@angular/router';
 import {ImageService} from '../../../services/image.service.client';
 
 @Component({
-  selector: 'app-uploader',
-  templateUrl: './uploader.component.html',
-  styleUrls: ['./uploader.component.css']
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.css']
 })
-export class UploaderComponent implements OnInit {
-  @ViewChild('fileInput') fileInput;
+export class GalleryComponent implements OnInit {
   userId: string;
   user: User;
   username: string;
-  message: string;
-  selectedFiles: FileList;
+  images: any = [];
   constructor(private router: Router,
               private userService: UserService,
               private statusService: StatusService,
@@ -33,19 +31,19 @@ export class UploaderComponent implements OnInit {
     );
   }
 
-  upload() {
-    const file = this.selectedFiles.item(0);
-    this.imageService.uploadfile(file);
+  download() {
+    const test = [];
+    this.imageService.download(function(data) {
+      console.log(typeof data.Contents);
+      data.Contents.forEach(function(obj) {
+        if (obj.Size !== 0) {
+          test.push(obj);
+        }
+      });
+      console.log(test);
+    });
+    this.images = test;
+    //this.images = test.splice(1, test.length); //delete the first one
   }
 
-
-  selectFile(event) {
-    this.selectedFiles = event.target.files;
-  }
-
-  logout() {
-    this.userService.logout().subscribe(
-      res => this.router.navigate(['/login'])
-    );
-  }
 }

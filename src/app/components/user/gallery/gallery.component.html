@@ -1,0 +1,30 @@
+<body>
+<main>
+  <app-header [title]="'Gallery'"></app-header>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <div class="container" id="title">
+            <button (click)="download(images)">
+              Test
+            </button>
+            <div class="container-fluid ds-web-container">
+              <ul class="list-group">
+                <li *ngFor="let image of images;" class="list-group-item" >
+                  <a>{{image.Key}}</a>
+                  <img src="{{'https://s3-us-east-2.amazonaws.com/powerimage/' +image.Key}}">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
+</body>
