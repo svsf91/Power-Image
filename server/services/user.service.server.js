@@ -28,8 +28,6 @@ router.put('/api/user/:uid', updateUser);
 // DELETE Calls.
 router.delete('/api/user/:uid', deleteUser);
 
-
-
 //Local
 router.post('/api/login', passport.authenticate('LocalStrategy'), login);
 router.get('/api/checkLoggedIn', checkLoggedIn);
@@ -240,7 +238,6 @@ function logout(req, res) {
 function createUsers(req, res) {
   var user = req.body;
   user.password = bcrypt.hashSync(user.password);
-
   userMethod
     .findUserByUsername(user.username)
     .then(

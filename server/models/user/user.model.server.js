@@ -34,28 +34,28 @@ function insertWebsiteToUser(userId, websiteId) {
 }
 
 function createUser(user) {
-  var newUser = {
-    username: user.username,
-    password: user.password,
-    websites: [],
-    facebook: user.facebook,
-    google: user.google
-  };
-
-  if (user.firstName) {
-    newUser.firstName = user.firstName;
-  }
-  if (user.lastName) {
-    newUser.lastName = user.lastName;
-  }
-  if (user.email) {
-    newUser.email = user.email;
-  }
-  if (user.phone) {
-    newUser.phone = user.phone;
-  }
-
-  return userModel.create(newUser);
+  // var newUser = {
+  //   username: user.username,
+  //   password: user.password,
+  //   facebook: user.facebook,
+  //   google: user.google,
+  // };
+  //
+  // if (user.firstName) {
+  //   newUser.firstName = user.firstName;
+  // }
+  // if (user.lastName) {
+  //   newUser.lastName = user.lastName;
+  // }
+  // if (user.email) {
+  //   newUser.email = user.email;
+  // }
+  // if (user.phone) {
+  //   newUser.phone = user.phone;
+  // }
+  //
+  // return userModel.create(newUser);
+  return userModel.create(user);
 }
 
 function findAllUser() {
