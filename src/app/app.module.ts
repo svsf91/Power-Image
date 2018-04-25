@@ -23,6 +23,8 @@ import {UploaderComponent} from './components/user/uploader/uploader.component';
 import {UserDetailComponent} from './components/dashboard/admin-dashboard/user-detail/user-detail/user-detail.component';
 import { GalleryComponent } from './components/user/gallery/gallery.component';
 import {DisplayComponent} from "./components/user/display/display.component";
+import { AboutComponent } from './components/about/about.component';
+import { TutorialComponent } from './components/tutorial/tutorial.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {DisplayComponent} from "./components/user/display/display.component";
     UserDetailComponent,
     GalleryComponent,
     DisplayComponent,
+    AboutComponent,
+    TutorialComponent,
   ],
   imports: [
     BrowserModule,
