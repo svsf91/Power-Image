@@ -10,5 +10,9 @@ export class User {
               public email?: string,
               public website?: Website[],
               public dateCreated?: Date,
-              public facebook?: Facebook) {}
+              public facebook?: Facebook,
+              public dateLastLogin?: string,
+              public loginCount?: number,
+              public upload?: number,
+              public download?: number) {}
 }

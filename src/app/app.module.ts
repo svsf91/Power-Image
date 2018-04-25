@@ -20,6 +20,7 @@ import { AdminMainComponent } from './components/main/admin-main/admin-main.comp
 import {UploadFileService} from './services/uploadfile.service.client';
 import { EditorComponent } from './components/user/editor/editor.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { UserDetailComponent } from './components/main/admin-main/user-detail/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MenuComponent } from './components/menu/menu.component';
     UserMainComponent,
     AdminMainComponent,
     EditorComponent,
-    MenuComponent
+    MenuComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

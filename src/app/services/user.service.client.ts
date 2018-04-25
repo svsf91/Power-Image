@@ -31,6 +31,11 @@ export class UserService {
     return this.http.get<User>(url);
   }
 
+  findAllUser() {
+    const url = '/api/user/';
+    return this.http.get<User[]>(url);
+  }
+
   findUserByUsername(username: string) {
     const url = '/api/user?username=' + username;
     return this.http.get<User>(url);
